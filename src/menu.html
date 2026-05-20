@@ -1,0 +1,222 @@
+<div id="nameless-menu-overlay" style="display: none;">
+  <div class="nameless-menu">
+    <div class="menu-tabs">
+      <div class="tab active" data-target="tab-ui">UI</div>
+      <div class="tab" data-target="tab-performance">PERFORMANCE</div>
+      <div class="tab" data-target="tab-client">CLIENT</div>
+      <div class="tab" data-target="tab-plugins">PLUGINS</div>
+    </div>
+
+    <div class="menu-search">
+      <input type="text" id="menu-search-input" placeholder="Search">
+    </div>
+
+    <div class="menu-content">
+
+      <div id="tab-ui" class="tab-pane active">
+        <div class="setting-item">
+          <span class="setting-label">Custom Hitmarker Link</span>
+          <input type="text" class="setting-input" id="input-hitmarker" placeholder="https://.../.png">
+        </div>
+        <div class="setting-item">
+          <span class="setting-label">Custom Kill Icon Link</span>
+          <input type="text" class="setting-input" id="input-killicon" placeholder="https://.../.png">
+        </div>
+        <div class="setting-item">
+          <span class="setting-label">Game Chat</span>
+          <div class="button-group" id="group-chat-mode">
+            <div class="btn-box active" data-val="default">Default</div>
+            <div class="btn-box" data-val="hidden">Hidden</div>
+            <div class="btn-box" data-val="simplified">Simplified</div>
+          </div>
+        </div>
+        <div class="setting-item">
+          <span class="setting-label">In-game UI opacity</span>
+          <div class="slider-container">
+            <input type="range" id="input-ui-opacity" min="0" max="100" value="100">
+            <span class="slider-value" id="val-ui-opacity">100</span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <span class="setting-label">In-game UI scale</span>
+          <div class="slider-container">
+            <input type="range" id="input-ui-scale" min="0" max="100" value="100">
+            <span class="slider-value" id="val-ui-scale">100</span>
+          </div>
+        </div>
+        <div class="setting-item">
+          <span class="setting-label">UI Animations</span>
+          <label class="toggle-switch"><input type="checkbox" id="toggle-ui-animations"><span
+              class="slider"></span></label>
+        </div>
+
+        <div class="setting-category">
+          <div class="category-header">Theme</div>
+          <div class="setting-item sub-item">
+            <span class="setting-label">Nameless Theme</span>
+            <label class="toggle-switch"><input type="checkbox" id="toggle-nameless-theme" checked><span
+                class="slider"></span></label>
+          </div>
+          <div class="setting-item sub-item">
+            <span class="setting-label">Custom CSS Mode</span>
+            <div class="button-group" id="css-mode-group">
+              <span class="btn-box active" data-val="url">URL</span>
+              <span class="btn-box" data-val="code">Code</span>
+            </div>
+          </div>
+          <div class="setting-item sub-item" id="custom-css-url-container">
+            <span class="setting-label">CSS URL</span>
+            <input type="text" class="setting-input" id="input-custom-css-url" placeholder="https://.../.css">
+          </div>
+          <div class="setting-item sub-item" id="custom-css-code-container" style="display: none;">
+            <span class="setting-label">CSS Code</span>
+            <textarea class="setting-input" id="input-custom-css-code"
+              placeholder="/* Paste your custom CSS here */"></textarea>
+          </div>
+        </div>
+
+        <div class="setting-category">
+          <div class="category-header">Keystroke Overlay</div>
+          <div class="setting-item sub-item">
+            <span class="setting-label">Show Keystroke Overlay</span>
+            <label class="toggle-switch"><input type="checkbox" id="toggle-keystroke-overlay"><span
+                class="slider"></span></label>
+          </div>
+          <div class="setting-item sub-item">
+            <span class="setting-label">Edit Mode</span>
+            <label class="toggle-switch"><input type="checkbox" id="toggle-keystroke-edit"><span
+                class="slider"></span></label>
+          </div>
+          <div class="setting-item sub-item">
+            <span class="setting-label">Keystroke Overlay X Offset (px)</span>
+            <input type="text" class="setting-input num-input" id="input-keystroke-x" value="0">
+          </div>
+          <div class="setting-item sub-item">
+            <span class="setting-label">Keystroke Overlay Y Offset (px)</span>
+            <input type="text" class="setting-input num-input" id="input-keystroke-y" value="0">
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-performance" class="tab-pane">
+        <div class="setting-item">
+          <div class="setting-label-container">
+            <span class="setting-label">Unlimited FPS</span>
+            <span class="setting-label-sub">Requires Restart</span>
+          </div>
+          <label class="toggle-switch"><input type="checkbox" id="toggle-unlimited-fps"><span
+              class="slider"></span></label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-label-container">
+            <span class="setting-label">Start Fullscreen</span>
+            <span class="setting-label-sub">Requires Restart</span>
+          </div>
+          <label class="toggle-switch"><input type="checkbox" id="toggle-start-fullscreen"><span
+              class="slider"></span></label>
+        </div>
+      </div>
+
+      <div id="tab-client" class="tab-pane">
+        <div class="setting-category">
+          <div class="category-header">Discord Rich Presence</div>
+          <div class="setting-item sub-item">
+            <div class="setting-label-container">
+              <span class="setting-label">Show Rich Presence</span>
+              <span class="setting-label-sub">Requires Restart</span>
+            </div>
+            <label class="toggle-switch"><input type="checkbox" id="toggle-show-rpc" checked><span
+                class="slider"></span></label>
+          </div>
+          <div class="setting-item sub-item">
+            <span class="setting-label">Show Match Info</span>
+            <label class="toggle-switch"><input type="checkbox" id="toggle-rpc-match-info" checked><span
+                class="slider"></span></label>
+          </div>
+        </div>
+
+        <div class="setting-item"><span class="setting-label">Toggle Menu</span><span class="hotkey-value"
+            data-keybind="toggle menu">RSHIFT</span></div>
+        <div class="setting-item"><span class="setting-label">Copy Url</span><span class="hotkey-value"
+            data-keybind="copy url">F3</span></div>
+        <div class="setting-item"><span class="setting-label">Return Main Page</span><span class="hotkey-value"
+            data-keybind="return main page">F4</span></div>
+        <div class="setting-item"><span class="setting-label">Reload</span><span class="hotkey-value"
+            data-keybind="reload">F5</span></div>
+        <div class="setting-item"><span class="setting-label">Fullscreen</span><span class="hotkey-value"
+            data-keybind="fullscreen">F11</span></div>
+        <div class="setting-item"><span class="setting-label">Devtools</span><span class="hotkey-value"
+            data-keybind="devtools">F12 or Ctrl+Shift+I</span></div>
+        <div class="setting-item"><span class="setting-label">Quick Restart</span><span class="hotkey-value"
+            data-keybind="quick restart">Ctrl+Shift+r</span></div>
+
+        <div class="setting-category">
+          <div class="category-header">Zoom In/Out</div>
+          <div class="setting-item sub-item"><span class="setting-label">Zoom In</span><span class="hotkey-value"
+              data-keybind="zoom in">+</span></div>
+          <div class="setting-item sub-item"><span class="setting-label">Zoom Out</span><span class="hotkey-value"
+              data-keybind="zoom out">-</span></div>
+          <div class="setting-item sub-item"><span class="setting-label">Zoom Reset</span><span class="hotkey-value"
+              data-keybind="zoom reset">0</span></div>
+        </div>
+
+        <div class="setting-item">
+          <span class="setting-label">Reset Settings</span>
+          <button id="btn-reset-settings">Reset</button>
+        </div>
+      </div>
+
+      <div id="tab-plugins" class="tab-pane">
+        <div class="setting-category">
+          <div class="category-header">Script</div>
+
+          <div class="setting-item sub-item plugin-dropdown-toggle" data-target="plugin-add-script-content">
+            <span class="setting-label">Add Script</span>
+            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+              fill="none" stroke="#9c9ba4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6" />
+            </svg>
+          </div>
+          <div id="plugin-add-script-content" class="plugin-dropdown-content">
+            <div class="setting-item sub-item">
+              <span class="setting-label">Mode</span>
+              <div class="button-group" id="plugin-script-mode-group">
+                <span class="btn-box active" data-val="url">URL</span>
+                <span class="btn-box" data-val="code">Code</span>
+              </div>
+            </div>
+            <div class="setting-item sub-item" id="plugin-script-url-container">
+              <span class="setting-label">Script URL</span>
+              <input type="text" class="setting-input" id="input-plugin-script-url" placeholder="https://.../.js">
+            </div>
+            <div class="setting-item sub-item" id="plugin-script-code-container" style="display: none;">
+              <span class="setting-label">Script Code</span>
+              <textarea class="setting-input" id="input-plugin-script-code"
+                placeholder="/* Paste your custom JS here */" style="min-height: 80px;"></textarea>
+            </div>
+            <div class="setting-item sub-item">
+              <span class="setting-label">Script Name</span>
+              <input type="text" class="setting-input" id="input-plugin-script-name" placeholder="My Script">
+            </div>
+            <div class="setting-item sub-item">
+              <span class="setting-label"></span>
+              <button id="btn-add-plugin-script" class="plugin-btn-add">Add</button>
+            </div>
+          </div>
+
+          <div class="setting-item sub-item plugin-dropdown-toggle" data-target="plugin-manage-script-content">
+            <span class="setting-label">Manage Script</span>
+            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+              fill="none" stroke="#9c9ba4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6" />
+            </svg>
+          </div>
+          <div id="plugin-manage-script-content" class="plugin-dropdown-content">
+            <div id="manage-scripts-list" style="display: flex; flex-direction: column;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

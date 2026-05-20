@@ -1,0 +1,26 @@
+appId: dev.imnotkoolkid.namelessclient
+productName: Nameless Client(r)
+artifactName: "${productName}-${os}.${ext}"
+npmRebuild: false
+publish:
+  - provider: github
+    releaseType: draft
+directories:
+  output: dist
+files:
+  - "**/*"
+  - "!dist/**/*"
+  - "!node_modules/.cache/**/*"
+asar: true
+win:
+  target: nsis
+  icon: src/assets/img/icon.ico
+  executableName: nameless-client-r
+linux:
+  target: AppImage
+  icon: src/assets/img/icon.png
+  category: Utility
+mac:
+  target: dmg
+  icon: src/assets/img/icon.icns
+  identity: null

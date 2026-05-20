@@ -1,0 +1,375 @@
+<style>
+  .nlc-keys-overlay {
+    display: flex;
+    flex-direction: column;
+    max-width: 688px
+  }
+
+  .nlc-key-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .25rem
+  }
+
+  .nlc-key-default {
+    display: grid;
+    place-items: center;
+    color: var(--nlc-letter-clr);
+    border: 2px solid var(--nlc-key-clr);
+    margin-right: .25rem;
+    transform: skew(var(--nlc-skew));
+    border-radius: .25rem;
+    max-height: 36px;
+    height: 36px;
+    width: 36px;
+    min-width: 36px;
+    user-select: none;
+    text-transform: uppercase;
+    opacity: var(--nlc-key-opacity);
+    font-size: var(--nlc-letter-size)
+  }
+
+  .nlc-key-default.nlc-key-active {
+    color: black;
+    background: white
+  }
+
+  .nlc-key-blank {
+    border-color: transparent;
+    cursor: auto
+  }
+
+  .nlc-key-blank:hover {
+    background: transparent
+  }
+
+  .nlc-key-wide {
+    width: 100%;
+    padding: 0 .5rem;
+    text-transform: lowercase
+  }
+
+  .nlc-key-modifier {
+    text-transform: lowercase
+  }
+
+  .nlc-key-ultrawide {
+    max-width: 350px;
+    width: 100%
+  }
+
+  #key-row-three .nlc-key-wide {
+    max-width: 70px;
+    min-width: 70px
+  }
+
+  #key-row-three .nlc-key-wide:last-child {
+    max-width: 60px;
+    min-width: unset
+  }
+
+  #key-row-four .nlc-key-wide {
+    max-width: 85px
+  }
+
+  #key-row-four .nlc-key-wide:last-child {
+    max-width: unset
+  }
+
+  #key-row-five .nlc-key-wide {
+    max-width: 95px
+  }
+
+  #key-row-five .nlc-key-wide:last-child {
+    max-width: 120px
+  }
+
+  #key-row-six .nlc-key-wide {
+    max-width: 55px
+  }
+
+  .nlc-key-default:last-child {
+    margin: 0
+  }
+
+  p {
+    margin: 0
+  }
+
+  .nlc-keys-overlay:not(.edit) .nlc-key-disabled {
+    display: none !important
+  }
+
+  .nlc-keys-overlay.edit {
+    pointer-events: all
+  }
+
+  .nlc-keys-overlay.edit .nlc-key-default {
+    cursor: pointer
+  }
+
+  .nlc-keys-overlay.edit .nlc-key-disabled {
+    opacity: .75;
+    --nlc-key-clr: #f00 !important;
+    --nlc-letter-clr: #f00 !important;
+    color: #f00 !important;
+    border-color: #f00 !important
+  }
+
+  .nlc-keys-overlay.edit .nlc-key-disabled p,
+  .nlc-keys-overlay.edit .nlc-key-disabled.nlc-key-active,
+  .nlc-keys-overlay.edit .nlc-key-disabled.nlc-key-active p {
+    color: #f00 !important
+  }
+
+  .nlc-keys-overlay.edit .nlc-key-disabled.nlc-key-active {
+    background: transparent !important;
+    border-color: #f00 !important
+  }
+</style>
+<div id="keys-overlay" class="nlc-keys-overlay"
+  style="--nlc-skew:-10deg;--nlc-key-clr:white;--nlc-letter-clr:white;--nlc-key-opacity:1;--nlc-letter-size:1rem">
+  <div id="key-row-one" class="nlc-key-row">
+    <div class="nlc-key-default nlc-key-modifier" data-code="Escape">
+      <p>esc</p>
+    </div>
+    <div class="nlc-key-default nlc-key-blank">
+      <p></p>
+    </div>
+    <div class="nlc-key-default" data-code="F1">
+      <p>f1</p>
+    </div>
+    <div class="nlc-key-default" data-code="F2">
+      <p>f2</p>
+    </div>
+    <div class="nlc-key-default" data-code="F3">
+      <p>f3</p>
+    </div>
+    <div class="nlc-key-default" data-code="F4">
+      <p>f4</p>
+    </div>
+    <div class="nlc-key-default nlc-key-blank">
+      <p></p>
+    </div>
+    <div class="nlc-key-default" data-code="F5">
+      <p>f5</p>
+    </div>
+    <div class="nlc-key-default" data-code="F6">
+      <p>f6</p>
+    </div>
+    <div class="nlc-key-default" data-code="F7">
+      <p>f7</p>
+    </div>
+    <div class="nlc-key-default" data-code="F8">
+      <p>f8</p>
+    </div>
+    <div class="nlc-key-default nlc-key-blank">
+      <p></p>
+    </div>
+    <div class="nlc-key-default" data-code="F9">
+      <p>f9</p>
+    </div>
+    <div class="nlc-key-default" data-code="F10">
+      <p>f10</p>
+    </div>
+    <div class="nlc-key-default" data-code="F11">
+      <p>f11</p>
+    </div>
+    <div class="nlc-key-default" data-code="F12">
+      <p>f12</p>
+    </div>
+  </div>
+  <div id="key-row-two" class="nlc-key-row">
+    <div class="nlc-key-default" data-code="Backquote">
+      <p>~</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit1">
+      <p>1</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit2">
+      <p>2</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit3">
+      <p>3</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit4">
+      <p>4</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit5">
+      <p>5</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit6">
+      <p>6</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit7">
+      <p>7</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit8">
+      <p>8</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit9">
+      <p>9</p>
+    </div>
+    <div class="nlc-key-default" data-code="Digit0">
+      <p>0</p>
+    </div>
+    <div class="nlc-key-default" data-code="Minus">
+      <p>-</p>
+    </div>
+    <div class="nlc-key-default" data-code="Equal">
+      <p>=</p>
+    </div>
+    <div class="nlc-key-default nlc-key-wide" data-code="Backspace">
+      <p>back</p>
+    </div>
+  </div>
+  <div id="key-row-three" class="nlc-key-row">
+    <div class="nlc-key-default nlc-key-wide" data-code="Tab">
+      <p>tab</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyQ">
+      <p>Q</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyW">
+      <p>W</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyE">
+      <p>E</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyR">
+      <p>R</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyT">
+      <p>T</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyY">
+      <p>Y</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyU">
+      <p>U</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyI">
+      <p>I</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyO">
+      <p>O</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyP">
+      <p>P</p>
+    </div>
+    <div class="nlc-key-default" data-code="BracketLeft">
+      <p>[</p>
+    </div>
+    <div class="nlc-key-default" data-code="BracketRight">
+      <p>]</p>
+    </div>
+    <div class="nlc-key-default nlc-key-wide" data-code="Backslash">
+      <p>\</p>
+    </div>
+  </div>
+  <div id="key-row-four" class="nlc-key-row">
+    <div class="nlc-key-default nlc-key-wide" data-code="CapsLock">
+      <p>caps</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyA">
+      <p>A</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyS">
+      <p>S</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyD">
+      <p>D</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyF">
+      <p>F</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyG">
+      <p>G</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyH">
+      <p>H</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyJ">
+      <p>J</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyK">
+      <p>K</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyL">
+      <p>L</p>
+    </div>
+    <div class="nlc-key-default" data-code="Semicolon">
+      <p>;</p>
+    </div>
+    <div class="nlc-key-default" data-code="Quote">
+      <p>'</p>
+    </div>
+    <div class="nlc-key-default nlc-key-wide" data-code="Enter">
+      <p>enter</p>
+    </div>
+  </div>
+  <div id="key-row-five" class="nlc-key-row">
+    <div class="nlc-key-default nlc-key-wide" data-code="ShiftLeft">
+      <p>shift</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyZ">
+      <p>Z</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyX">
+      <p>X</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyC">
+      <p>c</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyV">
+      <p>v</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyB">
+      <p>b</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyN">
+      <p>n</p>
+    </div>
+    <div class="nlc-key-default" data-code="KeyM">
+      <p>m</p>
+    </div>
+    <div class="nlc-key-default" data-code="Comma">
+      <p>,</p>
+    </div>
+    <div class="nlc-key-default" data-code="Period">
+      <p>.</p>
+    </div>
+    <div class="nlc-key-default" data-code="Slash">
+      <p>/</p>
+    </div>
+    <div class="nlc-key-default nlc-key-wide" data-code="ShiftRight">
+      <p>shift</p>
+    </div>
+  </div>
+  <div id="key-row-six" class="nlc-key-row">
+    <div class="nlc-key-default nlc-key-wide" data-code="ControlLeft">
+      <p>ctrl</p>
+    </div>
+    <div class="nlc-key-default nlc-key-modifier" data-code="MetaLeft">
+      <p>mta</p>
+    </div>
+    <div class="nlc-key-default nlc-key-modifier" data-code="AltLeft">
+      <p>alt</p>
+    </div>
+    <div class="nlc-key-default nlc-key-ultrawide" data-code="Space">
+      <p>space</p>
+    </div>
+    <div class="nlc-key-default nlc-key-modifier" data-code="AltRight">
+      <p>alt</p>
+    </div>
+    <div class="nlc-key-default nlc-key-modifier" data-code="FN">
+      <p>fn</p>
+    </div>
+    <div class="nlc-key-default nlc-key-modifier" data-code="ContextMenu">
+      <p>ctxt</p>
+    </div>
+    <div class="nlc-key-default nlc-key-modifier" data-code="ControlRight">
+      <p>ctrl</p>
+    </div>
+  </div>
+</div>
